@@ -1,0 +1,223 @@
+/*
+    filename:       style.css
+    author:         Karan Manoj Shah
+    created:        24 March 2021
+    last modified:  28 March 2021
+    description:    Styles all HTML documents of CourseNation website (index.html, product.html, enquire.html, about.html, enhancements.html)
+*/
+
+/* General Styling */
+* { margin: 0; padding: 0; }
+h1 { font: normal 2.3em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } /* Short Hand Notation H1 Font Styling */
+h2 { font: normal 1.8em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+h3 { font: normal 1.3em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+p, a, ul, ol, dl { font: normal 1em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+p strong { color: #072a44; }
+
+/* Header */
+header {
+    padding: 1em 0;
+    text-align: center;
+    background-color: #12232E;
+    color: #ffffff;
+    clear: both;
+}
+header img { height: 3.2em; max-width: 70vw; }
+
+/* Navigation */
+nav { padding: 0 1em; background-color: #203647; clear: both; }
+nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; }
+nav ul li { transition: background 0.3s; padding: 1em; }
+nav ul li:hover { transition: 0.3s; background-color: rgba(00, 119, 167, 0.4); }
+nav ul li a { text-decoration: none; font-size: 0.8em; color: #ffffff; }
+li.active { background-color: rgba(00, 119, 167, 0.4); }
+
+/* Homepage Banner */
+.banner {
+    position: relative; /* Relative is used here as inner contents will be positioned via absolute display. */
+    width: 100%;
+    min-height: 70vh;
+    background: url(images/banner_bg.jpg) no-repeat;
+    background-size: cover;
+}
+.banner section {
+    position: absolute;
+    left: 4%;
+    top: 50%; transform: translateY(-50%); /* Vertically Center Within Banner */
+    width: 30%;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.banner h1 { font-size: 1.5em; color: #ffffff; } /* Reducing H1 Font Size From Default in Banner */
+.banner hr { width: 25%; margin: 1em 0; }
+.banner p { margin-bottom: 1em; font-size: 0.9em; color: #ffffff; }
+.citation {
+    position: absolute;
+    bottom: 0%; right: 0%; /* Position on Bottom Right of Banner */
+    padding: 0.2em;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.citation a { color: #ffffff; }
+
+/* Buttons Styling */
+.button_filled {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 7px;
+    background-color: #072a44;
+    margin: 0 5px;
+}
+.button_filled::after { content: " >"; transition: 0.2s; } /* Display An Arrow (>) After Content Inside Button */
+.button_filled:hover::after { transition: 0.2s; padding-left: 0.5em; } /* The Arrow Shifts Right By 0.5em On Hover */
+.button_outline {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px;
+    border: 2px solid #072a44;
+    background-color: transparent;
+    margin: 0 5px;
+}
+.button_outline::after { content: " >"; transition: 0.2s; }
+.button_outline:hover::after { transition: 0.2s; padding-left: 0.5em; }
+
+/* Article */
+article {
+    width: 80%; margin: 0 auto; /* Reduces width and centers article */
+    padding: 1em 0;
+}
+article section { margin: 1em 0; }
+article ul { list-style: inside circle; }
+article ol { list-style: inside decimal; margin: 1em 0; }
+article h3 { padding-top: 0.5em; }
+
+/* Aside */
+aside {
+    float: right;
+    width: 25%;
+    border: 5px solid #385c77;
+    border-radius: 10px;
+    margin: 2em 0.5em;
+    padding: 0.5em 1em;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+aside h2 {
+    font: normal 1.3em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Reducing H2 Font Size Than Default for Aside */
+    color: #385c77;
+    margin-bottom: 0.5em;
+}
+
+/* Courses Section in Products Page */
+#courses img { max-width: 100%; margin: 0 auto; display: block; }
+
+/* Details & Summary Tag */
+details {
+    clear: both;
+    margin: 1em 0;
+}
+details > summary {
+    cursor: pointer;
+    background-color: #dddddd;
+    padding: 1em 0.5em;
+}
+details p { padding: 0.5em; }
+details ol {
+    list-style-position: outside;
+    margin-left: 1em;
+    padding-left: 1em;
+    column-count: 3; /* Splits the list into 3 columns */
+    column-fill: balance; /* Ensures each column has approximately same amount of content. */
+    column-gap: 2em; /* Specifies the gap between the columns */
+    column-span: all; /* Enables elements to span across multiple columns. */
+}
+details ol > li { margin-top: 5px; font-weight: 600; } /* Applied to only li of ol, not li of ul which is child element of ol here */
+details ol ul { list-style: square inside; } /* Giving ul, the child element of ol, squared list style */
+summary h3 { display: inline; }
+
+/* Table */
+table {
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table th {
+    padding: 0.2em;
+    background-color: #203647;
+    color: #ffffff;
+}
+table td {
+    padding: 0.2em;
+    background-color: #abd3f1;
+}
+
+/* Styling for Timetable Section, Legend, & Table on About Page */
+#timetable { clear: both; }
+#timetable table { text-align: center; }
+#timetable_legend {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 35%;
+    border-radius: 5px;
+}
+#timetable_legend ul li { padding-left: 0.7em; list-style: none; }
+.cle { background-color: #5f9ea0; }
+.intro_to_programming { background-color: #e6e6fa; }
+.web_dev { background-color: #da70d6; }
+.net_admin { background-color: #98fb98; }
+
+/* Figure */
+figure {
+    float: right;
+    padding: 20px;
+    border: 5px double rgb(38, 61, 95);
+    border-radius: 5px;
+    margin-left: 1em;
+}
+figure img { max-width: 100%; max-height: 150px; }
+figure figcaption { text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* Form */
+form p { margin: 1em 0; }
+form fieldset { padding: 0.2em 1em; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+form label { display: inline-block; }
+form button { padding: 0.5em 1em; border-radius: 5px; border: none; background-color: #0e2d66; color: #ffffff; }
+form textarea { width: 100%; height: 50px; }
+form span { font-weight: 500; }
+
+/* Timer Section on Payment Page */
+#timer { border: 2px solid #0e2d66; padding: 1rem; }
+#timer_min, #timer_sec { font-weight: 500; }
+
+/* Profile Section in About Page */
+#profile dl { margin: 1em 0 1em 1em; }
+#profile dl dt { float: left; font-weight: 700; }
+#profile dl dt::after { content: ":";  }
+#profile dl dd { padding-left: 6em; word-wrap: break-word; } /* Wrapping ensures text stays within window on mobile screens */
+#profile embed { width: 70%; height: 300px; }
+
+/* Image Map */
+#programming_image_map { width: 388px; height: 262px; }
+
+/* Enhancement Page */
+.enhancements ul li { list-style: outside; margin-left: 2em; margin-top: 1em; }
+.enhancements ul ul li { list-style: circle outside; margin-top: 0.2em; }
+
+/* Manager Page */
+.confirmation {
+    border: 2px solid #0000ff;
+    background-color: rgba(0,0,255,0.2);
+    padding: 1rem;
+}
+.danger {
+    color: #ff0000;
+    font-weight: bold;
+    padding: 1rem 0;
+}
+
+/* Footer */
+footer {
+    clear: both;
+    padding: 0.4em 0;
+    text-align: center;
+    background-color: #203647;
+    color: #ffffff;
+}
+footer p  { font-size: 0.7em; }
